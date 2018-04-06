@@ -1,0 +1,8 @@
+{
+  "name": "TorontoShowroom",
+  "app_id": "9be403e2",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

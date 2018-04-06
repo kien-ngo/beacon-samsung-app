@@ -1,0 +1,51 @@
+<ion-header>
+    <ion-navbar color="maichi">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Admin</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+
+<ion-content padding>
+  <ion-card *ngIf="!isLoggedIn; else loggedIn">
+    <ion-card-header>Enter password</ion-card-header>
+    <ion-card-content>
+      <ion-input #password type="password" placeholder="Password"></ion-input>
+      <button ion-button color="secondary" (click)="logIn()">
+        <ion-icon name="lock" end></ion-icon>
+          &nbsp; Log in
+      </button>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- ///////////// -->
+  <ng-template #loggedIn>
+    <ion-card>
+      <ion-card-header>
+        Setting
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label>Visitor ID</ion-label>
+          <ion-input [(ngModel)]="visitorId" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Vertical ID</ion-label>
+          <ion-input [(ngModel)]="verticalId" type="text"></ion-input>
+        </ion-item>
+        <br>
+
+        <button ion-button color="secondary" (click)="saveContent()">Save</button>
+        <button ion-button color="danger" (click)="discardContent()">Discard</button>
+      </ion-card-content>
+    </ion-card>
+  </ng-template>
+  
+</ion-content>
+<button ion-button round style="right:10px; bottom:10px; z-index:12;
+        position:absolute;" color="maichi"
+        (click)="goHome()">
+  <ion-icon name="home"></ion-icon>              
+</button>

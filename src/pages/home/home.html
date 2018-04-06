@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar color="maichi">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title color="light">Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <button ion-item *ngFor="let beacon of beaconList" 
+            (click)="selectBeacon(beacon)"
+            style="border-left: 2px solid maichi">
+      <ion-avatar item-right>
+        <ion-icon name="arrow-round-forward"></ion-icon>
+      </ion-avatar>
+      <p>UUID: {{ beacon?.uuid }}</p>
+      <p>Major: {{ beacon?.major }}</p>
+      <p>Minor:  {{ beacon?.minor }}</p>
+      <p>RSSI: {{ beacon?.rssi }}</p>
+      <p>Accuracy: {{ beacon?.accuracy }}</p>
+    </button>
+  </ion-list>
+</ion-content>
+
+<button ion-button round style="right:10px; bottom:10px; z-index:12;
+        position:absolute;" color="maichi"
+        (click)="goHome()">
+  <ion-icon name="home"></ion-icon>              
+</button>

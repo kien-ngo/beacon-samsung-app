@@ -1,0 +1,31 @@
+<ion-header>
+    <ion-navbar color="maichi">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>About</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>Your phone's serial number</ion-card-header>
+    <ion-card-content>
+      <button ion-button color="secondary">{{ serialNumber }}</button>
+      <button ion-button color="danger">{{ uuid }}</button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>Other information</ion-card-header>
+    <ion-card-content>
+      <pre>{{ params | json }}</pre>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+<button ion-button round style="right:10px; bottom:10px; z-index:12;
+                position:absolute;" color="maichi"
+                (click)="goHome()">
+  <ion-icon name="home"></ion-icon>              
+</button>
