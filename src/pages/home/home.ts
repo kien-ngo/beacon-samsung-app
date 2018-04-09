@@ -1,6 +1,6 @@
 
 import { Component, NgZone } from '@angular/core';
-import { NavController, Platform, Events, NavParams, IonicPage, Nav } from 'ionic-angular';
+import { NavController, Platform, Events, NavParams, Nav } from 'ionic-angular';
 import { IBeacon } from '@ionic-native/ibeacon';
 import { DetailPage } from './../detail/detail';
 
@@ -98,5 +98,7 @@ export class HomePage {
   goHome() {
     this.nav.setRoot(HomePage);
   }
+
+  
 
 }///////

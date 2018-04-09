@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Nav } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { ToastController } from 'ionic-angular';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+//import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Device } from '@ionic-native/device';
 
 

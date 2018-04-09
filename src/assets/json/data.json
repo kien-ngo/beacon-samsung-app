@@ -1,0 +1,92 @@
+{ 
+  "_myUrl_": "https:\/\/portal.greenrack.com\/document/details/f484b3df-a14a-44ca-b665-f83980484aba",
+  "version": "1.1",
+  "deviceIdLength": "5",
+  "beaconProtocol": "Nearby",
+  "beaconFilter": "tmc-ss-namespace",
+  "beenThereTimeout": "50",
+  "visitorIdRegex": "[1-9][0-9][0-9]-[0-9]",
+  "adminPasswordLength": "4",
+  "parameters": [
+    { "thisLanguage": "EN",
+      "venueName": "Toronto Showroom",
+      "companyName": "Samsung Canada",
+      "companyLogoUrl": "https:\/\/greenrackservice.blob.core.windows.net\/samsung-ca\/sys\/logo-en.png",
+      "defaultSplashUrl": "http:\/\/greenrackservice.blob.core.windows.net\/samsung-ca\/sys\/splash-en.png",
+      "menuHomeLabel": "Home",
+      "menuMapLabel": "Floor Plan",
+      "menuHelpLabel": "Help",
+      "menuAboutLabel": "About",
+      "menuAdminLabel": "(Reserved)",
+      "venueLabel": "Showroom",
+      "zoneLabel": "Area",
+      "verticalLabel": "Story",
+      "floorPlanUrl": "https:\/\/portal.greenrack.com\/document\/details\/08d2e578-bdf5-438f-929b-5f2fc156b9f5", 
+      "helpPageUrl": "https:\/\/portal.greenrack.com\/document\/details\/89c25acd-b9e1-4517-bc3f-0a19ad9d6ab4" ,
+      "helpVideoUrl": "http:\/\/www...",
+      "aboutPageUrl": "https:\/\/portal.greenrack.com\/document\/details\/1bbae1c6-d75d-44ac-943e-4d1531830359" ,
+      "possibleActions": [
+        { "actionType": "request" , "actionLabel": "Send me Info", "actionLogUrl": "http:\/\/www...", "actionIconUrl": "http:\/\/www..." },
+        { "actionType": "followUp", "actionLabel": "Let's discuss", "actionLogUrl": "http:\/\/www...", "actionIconUrl": "http:\/\/www..." },
+        { "actionType": "comment", "actionLabel": "Comment", "actionLogUrl": "http:\/\/www...", "actionIconUrl": "http:\/\/www..." },
+        { "actionType": "survey", "actionLabel": "Survey", "actionLogUrl": "http:\/\/www...", "actionIconUrl": "http:\/\/www..." },
+        { "actionType": "play" , "actionLabel": "Play", "actionLogUrl": "http:\/\/www...", "actionIconUrl": "http:\/\/www..." },
+        { "actionType": "home", "actionLabel": "Back", "actionLogUrl": "", "actionIconUrl": "http:\/\/www..." },
+        { "actionType": "endVisit", "actionLabel": "End Visit", "actionLogUrl": "http:\/\/www...", "actionIconUrl": "http:\/\/www..." }
+      ],
+      "verticals": [
+        { "verticalId": "10", "vertName": "General", "isActive": true },
+        { "verticalId": "20", "vertName": "Sports" , "isActive": true },
+        { "verticalId": "30", "vertName": "Art, Film, Music", "isActive": true },
+        { "verticalId": "40", "vertName": "Education", "isActive": true },
+        { "verticalId": "50", "vertName": "Healthcare, Fitness", "isActive": true },
+        { "verticalId": "60", "vertName": "Food, Cooking", "isActive": true }
+      ],
+      "homePageZone": "Z",
+      "defaultVertical": "10",
+      "zones": [
+        { "zoneId": "Z", "zoneName": "Home", "beaconGroup": "000" , "isActive": true, 
+          "stories": [
+            { "vertical": "00", "_Zone-Vert_": "Home / All", "isActive": true,
+              "header": "Welcome to the Samsung Experience Showroom",
+              "splashColours": ["",""], "splashUrl": "http:\/\/image",
+              "vibeOnEntry": true, "playOnEntryUrl": "http:\/\/greenrackservice.com\/...",
+              "brief": "Here you will be able to experience and envision how Samsung products can help your organization achieve its objectives in an effective and efficient manner.",
+              "footer": "Please let us know if we can do anything to make your experience more valuable and enjoyable.",      
+              "contentRackUrl": "http:\/\/greenrackservice.com\/...",
+              "validActions": ["help", "feedback", "endVisit" ]
+            }
+          ]
+        },
+        { "zoneId": "B", "zoneName": "DooH" , "beaconGroup": "mmmm" , "isActive": true, 
+          "stories": [
+            { "vertical": "00", "_Zone-Vert_": "DooH / All", "isActive": true,
+              "header": "Display-out-of-Home Products",              
+              "splashColours": ["",""], "splashUrl": "http:\/\/image",              
+              "vibeOnEntry": ["2", "1000"], "beepOnEntry": true, "playOnEntryUrl": "http:\/\/greenrackservice.com\/...",
+              "brief": "Samsung offers you a wide selection of large screens bla bla...",
+              "footer": "Please let us know if we can do anything to make your experience more valuable and enjoyable.",
+              "contentRackUrl": "http:\/\/greenrackservice.cloudapp.net/rack/getdata/efba46cd-dc1b-4ab7-b943-ad3f62abf859?type=json",
+              "validActions": ["request", "followUp", "feedback"]
+            },
+            { "vertical": "20",
+              "_Zone-Vert_": "DooH / Sports",
+              "isActive": true,
+              "header": "Display-out-of-Home Products",              
+              "splashColours": ["154360","aed6f1"], "splashUrl": "", 
+              "vibeOnEntry": ["2", "1000"], "beepOnEntry": true, "playOnEntryUrl": "http:\/\/greenrackservice.com\/...",
+              "brief": "Samsung makes a wide selection of large screens for sports venues bla bla...",
+              "footer": "Please let us know if we can do anything to make your experience more valuable and enjoyable.",
+              "contentRackUrl": "http:\/\/greenrackservice.com\/...",
+              "validActions": ["request","followUp","comment","evaluate"]
+            }
+          ]
+        }
+      ],
+      "reps": [
+        { "repName": "Rick Jordan", "repEmail": "rick@tenet.com", "repPhone": "1-416-665-3069 x203", "repUrl": "http:\/\/www..."},
+        { "repName": "Kitty Atkinson", "repEmail": "kitty@tenet.com", "repPhone": "1-416-992-2599", "repUrl": "http:\/\/www..."}
+      ]
+    }
+  ]
+}

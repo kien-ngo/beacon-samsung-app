@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Nav } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { Device } from '@ionic-native/device';
 import { HttpClient } from '@angular/common/http';
-import 'rxjs/add/operator/map';
+import { Observable } from 'rxjs/Observable';
 
 @IonicPage()
 @Component({
@@ -14,29 +14,34 @@ export class AboutPage {
 
   serialNumber: any;
   uuid: any;
-  params: any;
+  public params: any;
+  
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
     public nav: Nav,
     private device: Device,
-    private http: HttpClient) {
+    public http: HttpClient) {
 
       this.serialNumber = this.device.serial;
       this.uuid = this.device.uuid;
+      
   }
-
+//
   ionViewDidLoad() {
-    console.log('ionViewDidLoad AboutPage');
-    this.http.get('http://greenrackservice.blob.core.windows.net/samsung-ca/sys/app-config-en.json').subscribe(data => {
-      console.log(data);
-      this.params = data;
-      JSON.parse(this.params);
-    });
-  }
+    this.getData();
+  } 
 
   goHome() {
     this.nav.setRoot(HomePage);
   }
+
+  getData() {
+    //'https://jsonplaceholder.typicode.com/users'
+    let url = 'https://jsonplaceholder.typicode.com/users';
+    let data: Observable<any> = this.http.get(url);
+    data.subscribe(res => {
+      this.params = res;
+    });
+  }
 }
- 

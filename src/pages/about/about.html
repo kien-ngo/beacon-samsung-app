@@ -16,13 +16,17 @@
       <button ion-button color="danger">{{ uuid }}</button>
     </ion-card-content>
   </ion-card>
-
-  <ion-card>
-    <ion-card-header>Other information</ion-card-header>
+  
+  <ion-card *ngFor = "let param of params">
+    <ion-card-header>User list</ion-card-header>
     <ion-card-content>
-      <pre>{{ params | json }}</pre>
+      <p>{{ param.id }}</p>
+      <p>{{ param.name }}</p>
+      <p>{{ param.username }}</p>
+      <p> {{ param.email }}</p>
     </ion-card-content>
   </ion-card>
+
 </ion-content>
 <button ion-button round style="right:10px; bottom:10px; z-index:12;
                 position:absolute;" color="maichi"

@@ -16,9 +16,9 @@ import { AdminPage } from './../pages/admin/admin';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { IBeacon } from '@ionic-native/ibeacon';
-import { BeaconProvider } from '../providers/beacon/beacon';
 import { Device } from '@ionic-native/device';
 import { PhotoViewer } from '@ionic-native/photo-viewer';
+
 
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 @NgModule({
@@ -58,8 +58,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     Device,
     PhotoViewer,
     HttpClient,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    BeaconProvider
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
 export class AppModule {}
