@@ -17,16 +17,51 @@
     </ion-card-content>
   </ion-card>
   
-  <ion-card *ngFor = "let param of params">
-    <ion-card-header>User list</ion-card-header>
+  <ion-card color="secondary">
+    <ion-card-header>Other information</ion-card-header>
     <ion-card-content>
-      <p>{{ param.id }}</p>
-      <p>{{ param.name }}</p>
-      <p>{{ param.username }}</p>
-      <p> {{ param.email }}</p>
+      <a>My URL: {{ _myUrl_ }}</a><br>
+      <p>Version: {{ version }}</p>
+      <p>Beacon Protocol: {{ beaconProtocol }}</p>
+      <p>Beacon Filter: {{ beaconFilter }}</p>
+      <p>Been there timeout: {{ beenThereTimeout }}</p>
+      <p>Device ID Length: {{ deviceIdLength }}</p>
+      <p>Visitor ID Regex: {{ visitorIdRegex }}</p>
+      <p>Admin password length: {{ adminPasswordLength }}</p>
     </ion-card-content>
   </ion-card>
 
+  <ion-card *ngFor="let parameter of parameters" color="primary">
+    <ion-card-header>Parameters</ion-card-header>
+    <ion-card-content>
+      <p>Language: {{ parameter.thisLanguage }}</p>
+      <p>Venue name: {{ parameter.venueName }}</p>
+      <p>Company name: {{ parameter.companyName }}</p>
+      <ion-img [src]=parameter.companyLogoUrl></ion-img>
+      <!-- -->
+      <ion-list color="maichi">
+        Default splash colors: 
+        <ion-item *ngFor="let dc of parameter.defaultSplashColours">
+          <p>Color: {{ dc || 'Unknown' }}</p>
+        </ion-item>
+      </ion-list>
+      <p>Default splash Url: {{ parameter.defaultSplashUrl}}</p>
+      <p>Venue label: {{parameter.venueLabel}}</p>
+      <p>Zone label: {{ parameter.zoneLabel }}</p>
+      <p>Vertical label: {{ parameter.verticalLabel }}</p>
+      <p>Menu home label: {{ parameter.menuHomeLabel}}</p>
+      <p>Menu map label: {{parameter.menuMapLabel}}</p>
+      <p>Menu help label: {{parameter.menuHelpLabel}}</p>
+      <p>Menu about label: {{parameter.menuAboutLabel}}</p>
+      <p>Menu admin label: {{parameter.menuAdminLabel}}</p>
+      <br>
+      <p>Floor plan Url: {{parameter.floorPlanUrl}}</p>
+      <p>Help page url: {{parameter.helpPageUrl}}</p>
+      <p>About page url: {{parameter.aboutPageUrl}}</p>
+      
+    </ion-card-content>
+  </ion-card>
+  
 </ion-content>
 <button ion-button round style="right:10px; bottom:10px; z-index:12;
                 position:absolute;" color="maichi"

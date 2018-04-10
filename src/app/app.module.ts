@@ -21,6 +21,7 @@ import { PhotoViewer } from '@ionic-native/photo-viewer';
 
 
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { JsonDataProvider } from '../providers/json-data/json-data';
 @NgModule({
   declarations: [
     MyApp,
@@ -58,7 +59,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     Device,
     PhotoViewer,
     HttpClient,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    JsonDataProvider
   ]
 })
 export class AppModule {}

@@ -1,9 +1,9 @@
 
 import { Component, NgZone } from '@angular/core';
-import { NavController, Platform, Events, NavParams, Nav } from 'ionic-angular';
+import { NavController, Platform, NavParams, Nav } from 'ionic-angular';
 import { IBeacon } from '@ionic-native/ibeacon';
 import { DetailPage } from './../detail/detail';
-
+import { JsonDataProvider } from '../../providers/json-data/json-data';
 
 @Component({
   selector: 'page-home',
@@ -21,6 +21,8 @@ export class HomePage {
   delegate: any;
   region:   any;
 
+
+  jayson:any;
   beaconFound: boolean;
 
   // Beacon list to store scanned beacons information
@@ -28,11 +30,13 @@ export class HomePage {
   constructor(public navCtrl: NavController,
               public platform: Platform,
               public ngzone: NgZone,
-              private events: Events,
               public navParams: NavParams,
               private ibeacon: IBeacon,
-              public nav: Nav) {
-    
+              public nav: Nav,
+              public jsonDataProvider: JsonDataProvider) {
+    this.jsonDataProvider.getData().subscribe(res => {
+      this.jayson = res;
+    });
   }
   ////////// MAIN BODY EVERYTHING GOES HERE ////////////
   ionViewDidLoad() {

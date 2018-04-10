@@ -1,9 +1,7 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Nav } from 'ionic-angular';
 import { HomePage } from '../home/home';
-import { Device } from '@ionic-native/device';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
+import { JsonDataProvider } from '../../providers/json-data/json-data';
 
 @IonicPage()
 @Component({
@@ -14,34 +12,53 @@ export class AboutPage {
 
   serialNumber: any;
   uuid: any;
-  public params: any;
+  
+  
+
+  // JSON
+  _myUrl_: any;
+  version:any;
+  beaconProtocol: any;
+  beaconFilter: any;
+  beenThereTimeout: any;
+  deviceIdLength: any;
+  visitorIdRegex: any;
+  adminPasswordLength: any;
+    // -- Parameter
+  parameters: any;
+  defaultSplashColours: any;
   
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
     public nav: Nav,
-    private device: Device,
-    public http: HttpClient) {
+    public jsonDataProvider: JsonDataProvider) {
 
-      this.serialNumber = this.device.serial;
-      this.uuid = this.device.uuid;
-      
+      this.serialNumber = this.jsonDataProvider.serialNumber;
+      this.uuid = this.jsonDataProvider.uuid;
+      this.jsonDataProvider.getData().subscribe(res => {
+        
+        this._myUrl_ = res._myUrl_;
+        this.version = res.version;
+        this.beaconProtocol = res.beaconProtocol;
+        this.beaconFilter = res.beaconFilter;
+        this.beenThereTimeout = res.beenThereTimeout;
+        this.deviceIdLength = res.deviceIdLength;
+        this.visitorIdRegex = res.visitorIdRegex;
+        this.adminPasswordLength = res.adminPasswordLength;
+        // Parameters
+        this.parameters = res.parameters;
+        this.defaultSplashColours = res.parameters.defaultSplashColours;
+
+      });
   }
 //
   ionViewDidLoad() {
-    this.getData();
+
   } 
 
   goHome() {
     this.nav.setRoot(HomePage);
   }
 
-  getData() {
-    //'https://jsonplaceholder.typicode.com/users'
-    let url = 'https://jsonplaceholder.typicode.com/users';
-    let data: Observable<any> = this.http.get(url);
-    data.subscribe(res => {
-      this.params = res;
-    });
-  }
 }
